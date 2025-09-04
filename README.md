@@ -13,7 +13,7 @@ $P + \tfrac{1}{2}\rho v^2 = \text{constant}$
 
 where:
 - \( P \) = Pressure (Pa)  
-- \( rho \) = Fluid density (kg/m³)  
+- \( $\rho$ \) = Fluid density (kg/m³)  
 - \( v \) = Velocity (m/s)  
 
 As the pipe narrows:
