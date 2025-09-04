@@ -9,13 +9,11 @@ It simulates the velocity and pressure of water flowing through a narrowing pipe
 
 According to **Bernoulli’s equation**:
 
-\[
-P + \frac{1}{2}\rho v^2 = \text{constant}
-\]
+$P + \tfrac{1}{2}\rho v^2 = \text{constant}$
 
 where:
 - \( P \) = Pressure (Pa)  
-- \( \rho \) = Fluid density (kg/m³)  
+- \( rho \) = Fluid density (kg/m³)  
 - \( v \) = Velocity (m/s)  
 
 As the pipe narrows:
@@ -58,6 +56,6 @@ This demonstrates the inverse relationship between velocity and pressure predict
 
 ## 🛠 Requirements
 
-Python 3.x
-numpy
-matplotlib
+-Python 3.x
+-numpy
+-matplotlib
