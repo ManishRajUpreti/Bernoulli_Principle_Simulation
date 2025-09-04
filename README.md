@@ -5,7 +5,7 @@ It simulates the velocity and pressure of water flowing through a narrowing pipe
 
 ---
 
-## 📚 Theory
+## Theory
 
 According to **Bernoulli’s equation**:
 
@@ -22,7 +22,7 @@ As the pipe narrows:
 
 ---
 
-## ⚙️ Code Features
+## Code Features
 - Uses `numpy` to compute velocity and pressure along the pipe.  
 - Dual-axis plot with:
   - **Blue curve** → velocity (m/s).  
@@ -32,7 +32,7 @@ As the pipe narrows:
 
 ---
 
-## 🚀 How to Run
+## How to Run
 1. Install dependencies:
    ```bash
    pip install numpy matplotlib
@@ -45,7 +45,7 @@ As the pipe narrows:
 
 ---
 
-## 📊 Example Output
+## Example Output
 
 The plot shows:
 Velocity rising from ~2 m/s to ~4 m/s.
@@ -54,7 +54,7 @@ This demonstrates the inverse relationship between velocity and pressure predict
 
 ---
 
-## 🛠 Requirements
+## Requirements
 
 - Python 3.x
 - numpy
