@@ -33,15 +33,20 @@ As the pipe narrows:
 ---
 
 ## How to Run
-1. Install dependencies:
+1. Clone the Repository
+   ```bash
+   git clone [https://github.com/manishrajupreti/Bernoulli_Principle_Simulation.git](https://github.com/manishrajupreti/Bernoulli_Principle_Simulation.git)
+   cd Bernoulli_Principle_Simulation
+   ```
+2. Install dependencies:
    ```bash
    pip install numpy matplotlib
    ```
-2. Run the script:
+3. Run the script:
    ```bash
    python bernoulli_simulation.py
    ```
-3. A plot will be displayed showing velocity rising and pressure falling along the pipe.
+4. A plot will be displayed showing velocity rising and pressure falling along the pipe.
 
 ---
 
