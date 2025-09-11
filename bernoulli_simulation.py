@@ -3,49 +3,32 @@ import matplotlib.pyplot as plt
 
 # Physical constants
 rho = 1000       # water density (kg/m³)
-P1 = 100000      # initial pressure (Pa)
-v1 = 2           # initial velocity (m/s)
 A1 = 0.02        # initial cross-sectional area (m²)
 
 # Pipe geometry
-x = np.linspace(0, 10, 100)             # pipe length positions (m)
-A_pipe = np.linspace(A1, A1 / 2, 100)   # cross-sectional area reduces linearly
+x = np.linspace(0, 10, 100)             
 
-# Continuity equation: A1*v1 = A*v
-velocity = (A1 * v1) / A_pipe
+def plot_bernoulli(v1, P1):
+    A_pipe = np.linspace(A1, A1 / 2, 100)
+    velocity = (A1 * v1) / A_pipe
+    pressure = P1 + (0.5 * rho * (v1**2 - velocity**2))
 
-# Bernoulli’s principle: P + 0.5*rho*v² = constant
-pressure = P1 + (0.5 * rho * (v1**2 - velocity**2))
+    fig, ax1 = plt.subplots(figsize=(10, 6))
+    ax1.set_xlabel("Position along pipe (m)")
+    ax1.set_ylabel("Velocity (m/s)", color="b")
+    ax1.plot(x, velocity, "b", linewidth=2)
+    ax1.tick_params(axis="y", labelcolor="b")
 
-# --- Plot ---
-fig, ax1 = plt.subplots(figsize=(10, 6))
+    ax2 = ax1.twinx()
+    ax2.set_ylabel("Pressure (Pa)", color="r")
+    ax2.plot(x, pressure, "r--", linewidth=2)
+    ax2.tick_params(axis="y", labelcolor="r")
 
-# Velocity curve
-ax1.set_xlabel("Position along pipe (m)")
-ax1.set_ylabel("Velocity (m/s)", color="b")
-ax1.plot(x, velocity, color="b", linewidth=2, label="Velocity")
-ax1.fill_between(x, 0, velocity, color="b", alpha=0.1)  # shading for clarity
-ax1.tick_params(axis="y", labelcolor="b")
+    plt.title("Bernoulli’s Principle: Velocity and Pressure in a Pipe")
+    plt.show()
 
-# Pressure curve (second y-axis)
-ax2 = ax1.twinx()
-ax2.set_ylabel("Pressure (Pa)", color="r")
-ax2.plot(x, pressure, color="r", linestyle="--", linewidth=2, label="Pressure")
-ax2.fill_between(x, pressure, min(pressure), color="r", alpha=0.1)
-ax2.tick_params(axis="y", labelcolor="r")
+# --- User inputs ---
+v1 = float(input("Enter initial velocity v1 (m/s): "))
+P1 = float(input("Enter initial pressure P1 (Pa): "))
 
-# Add annotations for start and end values
-ax1.annotate(f"{velocity[0]:.2f} m/s", xy=(x[0], velocity[0]), xytext=(1, velocity[0]+0.5),
-             arrowprops=dict(arrowstyle="->", color="blue"), color="blue")
-ax1.annotate(f"{velocity[-1]:.2f} m/s", xy=(x[-1], velocity[-1]), xytext=(8, velocity[-1]-1),
-             arrowprops=dict(arrowstyle="->", color="blue"), color="blue")
-
-ax2.annotate(f"{pressure[0]:.0f} Pa", xy=(x[0], pressure[0]), xytext=(1, pressure[0]+2000),
-             arrowprops=dict(arrowstyle="->", color="red"), color="red")
-ax2.annotate(f"{pressure[-1]:.0f} Pa", xy=(x[-1], pressure[-1]), xytext=(8, pressure[-1]-3000),
-             arrowprops=dict(arrowstyle="->", color="red"), color="red")
-
-# Title and layout
-plt.title("Bernoulli’s Principle: Velocity and Pressure in a Pipe", fontsize=14)
-fig.tight_layout()
-plt.show()
+plot_bernoulli(v1, P1)
