@@ -40,7 +40,7 @@ As the pipe narrows:
    ```
 2. Install dependencies:
    ```bash
-   pip install numpy matplotlib
+   pip install numpy matplotlib ipywidgets
    ```
 3. Run the script:
    ```bash
